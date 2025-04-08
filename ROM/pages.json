@@ -586,6 +586,15 @@
             "    function() ",
             "       CICU.flightControlInputs.engineTilt = math.max(math.min(CICU.flightControlInputs.engineTilt - (5/90), 1), 0)",
             "    end)",
+
+            "    pages.ENG:drawGauge(disp, x + (w/2), y + (h/2), 0.4, 2, '', math.floor(CICU.systemSettings.fcSensitivity*100)/10, 10, math.floor(CICU.systemSettings.fcSensitivity*100)/10)",
+            "    setButton(3, panel, x + (w/2) - (h/2), y, h, h, function()",
+            "       CICU.systemSettings.fcSensitivity = math.max(math.min(CICU.systemSettings.fcSensitivity + 0.01, 1), 0)",
+            "    end, ",
+            "    function() ",
+            "       CICU.systemSettings.fcSensitivity = math.max(math.min(CICU.systemSettings.fcSensitivity - 0.01, 1), 0)",
+            "    end)",
+
             "    local cautions = CICU.cautions",
             "    local activeCautions = {}",
             "    local cautionCount = 0",
